@@ -103,7 +103,7 @@ body {
 
 @media (min-width: 756px) {
     body {
-        margin: 0;
+        margin: 2rem 0;
     }
 
     .header {

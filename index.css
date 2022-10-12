@@ -39,14 +39,14 @@ body {
 }
 
 .header h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--clr-dark-blue);
     margin-bottom: 1rem;
 }
 
 .header h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 200;
     color: var(--clr-dark-blue);
     margin-bottom: 0.25rem;
@@ -56,16 +56,16 @@ body {
     font-size: 0.983rem;
     color: var(--clr-grayish-blue);
     padding: 0 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3.75rem;
 }
 
 .card {
-    width: 100%;
+    max-width: 100%;
     height: 14.063rem;
     padding: 1.75rem 1.75rem;
     background-color: white;
     border-radius: 0.5rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(1, 55, 102, 0.25) 0px 13px 27px -5px, rgba(48, 3, 246, 0.1) 0px 8px 16px -8px;
     margin-bottom: 1.5rem;
 }
 
@@ -76,7 +76,9 @@ body {
 }
 
 .card h3 {
+    font-size: 1.25rem;
     color: var(--clr-dark-blue);
+    margin-bottom: 0.25rem;
 }
 
 .card p {
@@ -97,5 +99,68 @@ body {
 
 .card:nth-child(4) {
     border-top: 4px solid var(--clr-blue);
+}
+
+@media (min-width: 756px) {
+    body {
+        margin: 0;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 2.25rem;
+    }
+
+    .header h2 {
+        font-size: 2.25rem;
+        margin-bottom: 0.125rem;
+    }
+
+    .header p {
+        width: 65%;
+        font-size: 1rem;
+        padding: 0 4.5rem;
+    }
+
+    .card {
+        width: 350px;
+        height: 255px;
+        margin-bottom: 0;
+    }
+
+    .cards {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "start mid-up end"
+        "start mid-down end";  
+    }
+
+    .card:first-child {
+        grid-area: start;
+        align-self: center;
+    }
+    
+    .card:nth-child(2) {
+        grid-area: mid-up;
+    }
+    
+    .card:nth-child(3) {
+        grid-area: mid-down;
+    }
+    
+    .card:nth-child(4) {
+        grid-area: end;
+        align-self: center;
+    }
 }
 
